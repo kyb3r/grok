@@ -22,7 +22,7 @@ class Pacman:
     self.original_grid = self.grid.copy()
     self.pacdot_pos = self.pacdots() # Stores pacdot positions
     self.next_ghosts = [] # Stores the next moves the ghosts
-    self.last_pacman = None # Stores the last pacman position after a move
+    self.after_move = None # Stores the last pacman position after a move
     self.before_move = None # Stores the last pacman position before a move
     
   def pacdots(self):
@@ -58,8 +58,7 @@ class Pacman:
     while todo:
       path = todo.pop(0)
       cr, cc = path[-1]
-      p, d = self.before_move
-      if (cr, cc) == (p, d):
+      if (cr, cc) == self.before_move:
         return path
       if (cr, cc) in seen:
         continue
@@ -98,7 +97,7 @@ class Pacman:
     if out:
       self.before_move = self.pacman_pos
       self.move_pacman(*out)
-      self.last_pacman = self.pacman_pos
+      self.after_move = self.pacman_pos
       if self.win_check():
         return True
       if self.lose_check():
@@ -107,7 +106,7 @@ class Pacman:
         return False
       self.move_ghosts()
       if self.lose_check():
-        x, y = self.last_pacman
+        x, y = self.after_move
         self.grid[x][y] = 'X'
         return False
     else:
@@ -146,7 +145,7 @@ class Pacman:
   
   def lose_check(self):
     '''Checks if the pacman is dead'''
-    return self.last_pacman in self.next_ghosts or not self.pacman_pos
+    return self.afer_move in self.next_ghosts or not self.pacman_pos
     
   def show_grid(self, grid=None):
     ''''Prints out a the grid or a seperate grid if given'''
