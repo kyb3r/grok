@@ -11,17 +11,17 @@ You will be given a file called maze.txt describing a Pac Man maze. The file wil
 #G . #G#
 ########
 ```
-Pac Man will appear once in the maze and is represented by P. Ghosts are represented by G, impenetrable walls by #, pac dots by ., and empty floor space by a space. The maze will always have an outside border of walls. The initial position of the ghosts do not contain pac dots.
+Pac Man will appear once in the maze and is represented by `P`. Ghosts are represented by `G`, impenetrable walls by `#`, pac dots by `.`, and empty floor space by a space. The maze will always have an outside border of walls. The initial position of the ghosts do not contain pac dots.
 
 The rules about ghosts and their movement is the same as it was in the previous Pac Man problem, except that this time, ghosts do not consume pac dots. Instead, they leave untouched any pac dots they move over.
 
 Your program should read in a single line of input from the user: a space separated list of single letter instructions. The set of instructions are as follows:
 
- * U: move Pac Man up one square this turn
- * D: move Pac Man down one square this turn
- * L: move Pac Man left one square this turn
- * R: move Pac Man right one square this turn
- * O: print out the current state of the game. This does not result in a turn of the game happening.
+ * `U`: move Pac Man up one square this turn
+ * `D`: move Pac Man down one square this turn
+ * `L`: move Pac Man left one square this turn
+ * `R`: move Pac Man right one square this turn
+ * `O`: print out the current state of the game. This does not result in a turn of the game happening.
 
 When a turn of the game occurs due to user input, the following should happen in this order:
 
