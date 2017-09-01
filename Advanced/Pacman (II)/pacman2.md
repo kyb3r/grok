@@ -1,5 +1,7 @@
 # Pacman (II)
 
+In this problem, we will extend upon the previous Pac Man problem. Here, you will need to allow a player to play Pac Man.
+
 You will be given a file called maze.txt describing a Pac Man maze. The file will be in the following format:
 
 `maze.txt`
